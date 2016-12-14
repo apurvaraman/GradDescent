@@ -10,7 +10,7 @@ a = x-x_0;
 b = y-y_0;
 
 U = log(a^2+b^2)/2;
-gradU = gradient(U, [x_0, y_0]);
+gradU = gradient(U, [x_0, y_0])
 
 divF*gradU;
 
