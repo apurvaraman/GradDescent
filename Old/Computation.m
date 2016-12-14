@@ -1,0 +1,43 @@
+%%Generate vector field
+% user defines dimensions
+% user defines function
+
+[X,Y] = meshgrid(-5:0.4:5);
+Z = sin(X).*cos(Y);
+
+[U,V,W] = surfnorm(Z);
+
+% quiver3(-Z,U,V,W);
+
+surf(Z), hold on, quiver(U,V,'r'), hold off
+
+
+
+
+%%
+%Generate scalar field
+[X,Y] = meshgrid(-5:0.1:5);
+Z = sin(X).*cos(Y);
+
+surf(X,Y,Z);
+%div 
+%%
+%grad
+
+[X,Y] = meshgrid(-5:0.1:5);
+Z = sin(X).*cos(Y);
+
+[px,py] = gradient(Z);
+
+contour(Z), hold on, quiver(px,py), hold off
+
+%%
+[X,Y,Z] = meshgrid(-5:2:5);
+A = X.^2 + Y.^2 + Z.^2;
+[px,py,pz] = gradient(A);
+quiver3(X,Y,Z,px,py,pz);
+
+% quiver3(px,py,pz);
+
+%curl
+%plot
